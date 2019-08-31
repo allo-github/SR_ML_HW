@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--This element specifies UTF-8 encoding-->
+    <meta charset="UTF-8">
+    <!--disables viewport zooming-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>A MobileNet Image classifier</title>
+    <!--Load the latest version of TensorFlow.js-->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <!--Load MobileNet model-->
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <link rel='stylesheet' href='styles.css' />
+</head>
+
+<body>
+    <div class='page'>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">Demo</a>
+                <button class="btn" type="submit">Help</button>
+            </div>
+        </nav>
+        <header>
+            <h1>A MobileNet Image Classifier</h3>
+        </header>
+        <div class="section img-display">
+            <!--image element-->
+            <img id="img-output" style='max-width: 360px' />
+        </div>
+            <div class="section upload">
+                <!--Upload image input element-->
+                <!--This input element is of type "file", accepts all supported image filetypes. The loadFile
+                 function takes an event as an argument.-->
+                <input type="file" id="file" accept="image/*" onchange="loadFile(event)" />
+                <label for="file"></label>
+            </div>
+            <div class="section submit">
+                <!--to trigger JS classify function -->
+                <input type="submit" id="classify" value="Classify this image" />
+            </div>
+        <div class="section response">
+            <!--display prediction -->
+            <div id="answer"></div>
+        </div>
+    </div>
+    <!--Load index.js after the content of the page-->
+    <script src="index.js"></script>
+</body>
+
+</html>
